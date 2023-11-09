@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:3000"
+  http:
+    timeout: 1000
+  phases:
+    - duration: 1
+      arrivalRate: 10000
+
+scenarios:
+  - name: "First test"
+    flow:
+      - post:
+          url: "/users"
+          json:
+            userId: 1
+            amount: 2
